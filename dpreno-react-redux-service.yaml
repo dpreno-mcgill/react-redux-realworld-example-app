@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: react-redux-test-deploy
+  name: react-redux-test-deploy
+spec:
+  ports:
+  - port: 4100
+    protocol: TCP
+    targetPort: 4100
+  selector:
+    app: react-redux-test-deploy
+  sessionAffinity: None
+  type: LoadBalancer

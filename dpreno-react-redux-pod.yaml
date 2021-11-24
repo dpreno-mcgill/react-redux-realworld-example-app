@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: react-redux-test
+  labels: 
+    app:  react-redux-test-deploy
+spec:
+  containers:
+  - name: react-redux-test-fe
+    image: docker.io/dprenovost/react-redux:v1
+    ports:
+    - containerPort: 4100
