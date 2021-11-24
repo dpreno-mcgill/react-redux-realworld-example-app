@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-redux-deployment
+  labels:
+    app: react-redux-test-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: react-redux-test-deploy
+  template:
+    metadata:
+      labels:
+        app: react-redux-test-deploy
+    spec:
+      containers:
+      - name: react-redux-test-fe
+        image: docker.io/dprenovost/react-redux:v1
+        ports:
+        - containerPort: 4100
